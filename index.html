@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Промышленный альпинизм Астана | Alp Fenix | Высотные работы 24/7</title>
+  <meta name="description" content="Промышленный альпинизм в Астане: высотные работы 24/7 — мойка окон, герметизация швов, утепление, покраска фасада, ремонт кровли, монтаж/демонтаж баннеров, замена стеклопакетов, монтаж освещения, вентиляционные шахты, кондиционеры." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#EF4444;
+      --accent2:#B91C1C;
+      --ink:#0f172a;
+      --muted:#475569;
+      --bg:#F8FAFC;
+
+      /* photo strip */
+      --total-items: 8;
+      --animation-duration: 28s;
+      --item-w: 250px;
+    }
+
+    html, body { max-width: 100%; overflow-x: clip; }
+    body{
+      font-family:'Outfit',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    /* Gradient text */
+    .text-gradient{
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* CTA button */
+    .btn-accent{
+      background: linear-gradient(135deg, var(--accent) 0%, #DC2626 100%);
+      box-shadow: 0 14px 30px rgba(239,68,68,.30);
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .btn-accent:hover{ filter: brightness(1.02); }
+    .btn-accent:active{ transform: scale(.98); }
+
+    /* Radar pulse for primary CTA */
+    .radar-pulse{ position:relative; }
+    .radar-pulse::before,
+    .radar-pulse::after{
+      content:'';
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      border-radius:999px;
+      border:2px solid var(--accent);
+      opacity:0;
+      animation: radar 2s infinite;
+      z-index:-1;
+      pointer-events:none;
+    }
+    .radar-pulse::after{ animation-delay: .5s; }
+    @keyframes radar{
+      0%{ width:100%; height:100%; opacity:.7; }
+      100%{ width:240%; height:240%; opacity:0; }
+    }
+
+    /* Mobile menu: no "transparent leftover" when closed */
+    .menu-collapsed{
+      max-height:0;
+      overflow:hidden;
+      opacity:0;
+      transform: translateY(-8px);
+      pointer-events:none;
+    }
+    .menu-expanded{
+      max-height: 75vh;
+      overflow:auto;
+      opacity:1;
+      transform: translateY(0);
+      pointer-events:auto;
+    }
+    #mobileMenu{
+      transition: max-height .22s ease, opacity .22s ease, transform .22s ease;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Icon pills (nav left of burger) */
+    .icon-pill{
+      width:44px; height:44px;
+      border-radius: 999px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(15,23,42,.06);
+      color: rgba(15,23,42,.85);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .icon-pill:hover{ background: rgba(15,23,42,.10); }
+    .icon-pill:active{ transform: scale(.96); }
+
+    /* Photo strip */
+    .scorlling{
+      width:100%;
+      max-width: 1536px;
+      position:relative;
+      height: 160px;
+      overflow:hidden;
+      mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 18%, rgba(0,0,0,1) 82%, rgba(0,0,0,0));
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 18%, rgba(0,0,0,1) 82%, rgba(0,0,0,0));
+    }
+    .scorlling img{ width:100%; height:100%; object-fit: cover; }
+
+    @keyframes scrollleft{
+      to { left: calc(var(--item-w) * -1); }
+    }
+    .item{
+      width: var(--item-w);
+      height: 100%;
+      position:absolute;
+      overflow:hidden;
+      border-radius: 22px;
+      left: max(calc(var(--item-w) * var(--total-items)), 100%);
+      animation-name: scrollleft;
+      animation-duration: var(--animation-duration);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, .12);
+      border: 4px solid rgba(255,255,255,.85);
+      background: #e2e8f0;
+    }
+
+    /* delays */
+    .item1 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 1) * -1); }
+    .item2 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 2) * -1); }
+    .item3 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 3) * -1); }
+    .item4 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 4) * -1); }
+    .item5 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 5) * -1); }
+    .item6 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 6) * -1); }
+    .item7 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 7) * -1); }
+    .item8 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 8) * -1); }
+
+    /* FAQ */
+    .faq-item[aria-expanded="true"] .faq-chevron{ transform: rotate(180deg); }
+    .faq-chevron{ transition: transform .18s ease; }
+
+    /* Subtle grid background for hero image fallback */
+    .grid-fallback{
+      background:
+        radial-gradient(circle at 25% 10%, rgba(239,68,68,.20), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(59,130,246,.18), transparent 40%),
+        radial-gradient(circle at 40% 95%, rgba(16,185,129,.18), transparent 45%),
+        linear-gradient(135deg, rgba(15,23,42,.06), rgba(15,23,42,.02));
+    }
+  </style>
+</head>
+
+<body class="pb-24 md:pb-0">
+
+  <!-- NAV -->
+  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="relative">
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <!-- Brand -->
+        <a href="#top" class="flex items-center gap-2 select-none">
+          <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center shadow-sm">
+            <i class="fa-solid fa-mountain-sun text-xl"></i>
+          </div>
+          <div>
+            <div class="font-extrabold text-lg leading-none tracking-tight">
+              Alp<span class="text-red-500">Fenix</span>
+            </div>
+            <div class="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">Промышленный альпинизм · Астана</div>
+          </div>
+        </a>
+
+        <!-- Right -->
+        <div class="flex items-center gap-3">
+          <!-- quick icons -->
+          <a class="icon-pill hidden sm:flex" href="tel:+77073822207" aria-label="Позвонить">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <a class="icon-pill hidden sm:flex" href="https://wa.me/77073822207" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <a href="tel:+77073822207"
+             class="hidden md:flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 transition shadow-lg">
+            <i class="fa-solid fa-phone text-sm"></i>
+            <span class="font-black">+7 707 382 2207</span>
+          </a>
+
+          <button id="burgerBtn"
+                  class="md:hidden w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-700 active:scale-95 transition"
+                  aria-label="Открыть меню"
+                  aria-expanded="false"
+                  aria-controls="mobileMenu">
+            <i id="burgerIcon" class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu"
+           class="md:hidden absolute left-0 right-0 top-full bg-white/95 backdrop-blur-md border-t border-slate-100 menu-collapsed">
+        <div class="container mx-auto px-4 py-4">
+          <div class="grid grid-cols-2 gap-2 mb-3">
+            <a href="tel:+77073822207"
+               class="btn-accent text-white px-4 py-3 rounded-2xl font-black flex items-center justify-center gap-2">
+              <i class="fa-solid fa-phone"></i> Звонок
+            </a>
+            <a href="https://wa.me/77073822207"
+               target="_blank" rel="noopener"
+               class="bg-white text-green-600 border-2 border-green-500 px-4 py-3 rounded-2xl font-black flex items-center justify-center gap-2 hover:bg-green-50 transition">
+              <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <a href="#services" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black">Услуги</a>
+            <a href="#glass" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black">Витражи</a>
+            <a href="#benefits" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black">Почему мы</a>
+            <a href="#contacts" class="px-4 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 transition font-black">Контакты</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" class="pt-28 pb-12 md:pt-40 md:pb-20 overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-[520px] h-[520px] bg-red-50 rounded-full blur-3xl -z-10 opacity-60 translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-[360px] h-[360px] bg-blue-50 rounded-full blur-3xl -z-10 opacity-60 -translate-x-1/2 translate-y-1/2"></div>
+
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col-reverse lg:flex-row items-center gap-12">
+
+        <!-- Text -->
+        <div class="w-full lg:w-1/2 text-center lg:text-left z-10" data-aos="fade-up">
+          <div class="inline-flex items-center gap-2 bg-white border border-slate-200 px-4 py-1.5 rounded-full shadow-sm mb-6">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+            <span class="text-xs font-black text-slate-600 uppercase tracking-wide">Астана · Выезд и оценка бесплатно</span>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-black mb-6 leading-[1.05] text-slate-900">
+            Есть работы <br>
+            <span class="text-gradient">на высоте?</span>
+          </h1>
+
+          <p class="text-lg text-slate-500 mb-8 max-w-xl mx-auto lg:mx-0 font-medium">
+            Промышленный альпинизм 24/7: мойка окон и фасадов, герметизация швов, утепление,
+            покраска/грунтовка фасада, ремонт кровли, монтаж/демонтаж баннеров, монтаж освещения,
+            вентиляционные шахты, установка и заправка кондиционеров, срочный ремонт фасада, замена стеклопакетов.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="tel:+77073822207"
+               class="btn-accent text-white px-8 py-4 rounded-2xl font-black text-lg flex items-center justify-center gap-3 radar-pulse">
+              <i class="fa-solid fa-phone"></i> Позвонить сейчас
+            </a>
+            <a href="https://wa.me/77073822207?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%BD%D1%8B%20%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D1%81%D1%80%D0%BE%D0%BA%D0%B8."
+               target="_blank" rel="noopener"
+               class="bg-white text-green-600 border-2 border-green-500 px-8 py-4 rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:bg-green-50 transition">
+              <i class="fa-brands fa-whatsapp text-2xl"></i> Написать WhatsApp
+            </a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0">
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 text-left">
+              <div class="text-xs font-black text-slate-400 uppercase tracking-widest">Безопасно</div>
+              <div class="font-black text-slate-900 mt-1">Сертифицированные специалисты</div>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 text-left">
+              <div class="text-xs font-black text-slate-400 uppercase tracking-widest">Честно</div>
+              <div class="font-black text-slate-900 mt-1">Оценка бесплатно</div>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 text-left col-span-2 sm:col-span-1">
+              <div class="text-xs font-black text-slate-400 uppercase tracking-widest">Удобно</div>
+              <div class="font-black text-slate-900 mt-1">Все виды оплаты</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="w-full lg:w-1/2 relative" data-aos="zoom-in" data-aos-delay="150">
+          <div class="w-full h-[420px] md:h-[520px] relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-4 border-white grid-fallback">
+            <!-- rotates between images/img1.jpg ... img8.jpg (optional). Has fallback if images not found. -->
+            <img id="heroImage"
+                 src="images/img1.jpg"
+                 alt="Высотные работы в Астане"
+                 class="w-full h-full object-cover transition-opacity duration-700"
+                 loading="eager" decoding="async" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/35 via-transparent to-transparent"></div>
+
+            <!-- Big badge -->
+            <div class="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-md rounded-3xl p-4 border border-white shadow-xl">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="font-black text-slate-900 leading-tight">Высотные работы любой сложности</div>
+                  <div class="text-sm font-semibold text-slate-500">Астана · 24/7 · Гарантия качества</div>
+                </div>
+                <a href="#services" class="hidden sm:inline-flex font-black text-slate-900 px-4 py-2 rounded-2xl bg-slate-100 hover:bg-slate-200 transition">
+                  Услуги
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- floating cards -->
+          <div class="absolute top-10 -left-4 sm:-left-6 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 3.2s;">
+            <div class="flex items-center gap-3">
+              <div class="bg-green-100 p-2 rounded-lg text-green-700"><i class="fa-solid fa-bolt"></i></div>
+              <div>
+                <p class="text-[10px] text-slate-400 font-black uppercase">Срочно</p>
+                <p class="font-black text-slate-900">Выезд в день заявки</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute top-28 -right-3 sm:-right-6 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 4.2s;">
+            <div class="flex items-center gap-3">
+              <div class="bg-blue-100 p-2 rounded-lg text-blue-700"><i class="fa-solid fa-ruler-combined"></i></div>
+              <div>
+                <p class="text-[10px] text-slate-400 font-black uppercase">Точно</p>
+                <p class="font-black text-slate-900">Замер и смета</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-20 bg-white rounded-t-[50px] shadow-[0_-20px_40px_rgba(0,0,0,0.03)] z-20 relative overflow-hidden">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black text-center mb-4 text-slate-900">
+        Наши <span class="text-red-500">услуги</span>
+      </h2>
+      <p class="text-center text-slate-500 font-medium max-w-3xl mx-auto mb-12">
+        Основные направления: промышленный альпинизм и высотные работы в Астане.
+        Нажмите на услугу — откроется WhatsApp с готовым текстом.
+      </p>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <!-- card helper classes -->
+        <!-- Each card: clickable to WhatsApp -->
+        <a data-aos="fade-up" href="https://wa.me/77073822207?text=%D0%97%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0%20%D1%81%D1%82%D0%B5%D0%BA%D0%BB%D0%BE%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%86%D0%B5%D0%BD%D1%83."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-regular fa-square-plus"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Замена стеклопакетов</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Демонтаж/монтаж, герметичность</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="50"
+           href="https://wa.me/77073822207?text=%D0%98%D0%B7%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B8%D1%82%D1%80%D0%B0%D0%B6%D0%B5%D0%B9%20%D0%B8%20%D1%81%D0%B2%D0%B5%D1%82%D0%BE%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B9%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-regular fa-window-maximize"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Витражи и конструкции</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Изготовление/монтаж</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="100"
+           href="https://wa.me/77073822207?text=%D0%A1%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D1%84%D0%B0%D1%81%D0%B0%D0%B4%D0%B0%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BE%D1%86%D0%B5%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BC%20%D0%B8%20%D1%81%D1%80%D0%BE%D0%BA%D0%B8."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-hammer"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Ремонт фасада</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Срочно, безопасно</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="150"
+           href="https://wa.me/77073822207?text=%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%86%D0%B5%D0%BD%D1%83."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Кондиционеры</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Установка и заправка</p>
+        </a>
+
+        <a data-aos="fade-up"
+           href="https://wa.me/77073822207?text=%D0%94%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%B8%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%B2%D0%B5%D0%BD%D1%82%D1%88%D0%B0%D1%85%D1%82%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D0%B5."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Вентшахты</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Монтаж/демонтаж</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="50"
+           href="https://wa.me/77073822207?text=%D0%A0%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%BA%D1%80%D0%BE%D0%B2%D0%BB%D0%B8%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D1%8B%20%D0%B8%20%D1%86%D0%B5%D0%BD%D1%83."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-house-chimney"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Ремонт кровли</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Гидроизоляция, ремонт</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="100"
+           href="https://wa.me/77073822207?text=%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%BE%D1%81%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D0%B5%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6/%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0%20%D1%81%D0%B2%D0%B5%D1%82%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-regular fa-lightbulb"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Монтаж освещения</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Фасад, вывески, прожекторы</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="150"
+           href="https://wa.me/77073822207?text=%D0%A3%D1%82%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D1%82%D0%B5%D0%BD%20%D1%81%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B8%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%20%D0%B8%20%D1%81%D0%BC%D0%B5%D1%82%D0%B0."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Утепление</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Швы, панели, стены</p>
+        </a>
+
+        <a data-aos="fade-up"
+           href="https://wa.me/77073822207?text=%D0%9C%D0%BE%D0%B9%D0%BA%D0%B0%20%D0%BE%D0%BA%D0%BE%D0%BD%20%D0%B8%20%D1%84%D0%B0%D1%81%D0%B0%D0%B4%D0%BE%D0%B2%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D1%86%D0%B5%D0%BD%D0%B0%20%D0%B7%D0%B0%20%D0%BC2."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-spray-can-sparkles"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Мойка окон</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Окна, витражи, фасады</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="50"
+           href="https://wa.me/77073822207?text=%D0%9F%D0%BE%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B0%20%D0%B8%20%D0%B3%D1%80%D1%83%D0%BD%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%20%D1%84%D0%B0%D1%81%D0%B0%D0%B4%D0%B0%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D1%81%D0%BC%D0%B5%D1%82%D0%B0."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-paint-roller"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Покраска фасада</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Грунтовка, окраска</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="100"
+           href="https://wa.me/77073822207?text=%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%B8%20%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%86%D0%B5%D0%BD%D1%83."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-flag"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Баннеры/реклама</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Монтаж и демонтаж</p>
+        </a>
+
+        <a data-aos="fade-up" data-aos-delay="150"
+           href="https://wa.me/77073822207?text=%D0%93%D0%B5%D1%80%D0%BC%D0%B5%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%88%D0%B2%D0%BE%D0%B2%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%20%D0%B8%20%D1%81%D0%BC%D0%B5%D1%82%D0%B0."
+           target="_blank" rel="noopener"
+           class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <h3 class="font-black text-lg mb-2">Герметизация швов</h3>
+          <p class="text-sm text-slate-400 group-hover:text-red-100">Швы, стыки, протечки</p>
+        </a>
+      </div>
+
+      <!-- Photo strip (8 photos in /images/img1.jpg ... img8.jpg) -->
+      <div class="mt-14" data-aos="fade-up">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl md:text-3xl font-black text-slate-900">Фото <span class="text-red-500">работ</span></h3>
+          <p class="text-slate-500 font-medium mt-2">Положите 8 фото в папку <b>images</b> с именами <b>img1.jpg</b> … <b>img8.jpg</b>.</p>
+        </div>
+
+        <div class="mx-auto scorlling rounded-[32px] bg-white border border-slate-100">
+          <div class="item item1"><img src="images/img1.jpg" alt="Работы 1" loading="lazy" decoding="async"></div>
+          <div class="item item2"><img src="images/img2.jpg" alt="Работы 2" loading="lazy" decoding="async"></div>
+          <div class="item item3"><img src="images/img3.jpg" alt="Работы 3" loading="lazy" decoding="async"></div>
+          <div class="item item4"><img src="images/img4.jpg" alt="Работы 4" loading="lazy" decoding="async"></div>
+          <div class="item item5"><img src="images/img5.jpg" alt="Работы 5" loading="lazy" decoding="async"></div>
+          <div class="item item6"><img src="images/img6.jpg" alt="Работы 6" loading="lazy" decoding="async"></div>
+          <div class="item item7"><img src="images/img7.jpg" alt="Работы 7" loading="lazy" decoding="async"></div>
+          <div class="item item8"><img src="images/img8.jpg" alt="Работы 8" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+
+      <!-- Quick CTA -->
+      <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="tel:+77073822207" class="btn-accent text-white px-7 py-4 rounded-2xl font-black text-lg inline-flex items-center justify-center gap-3 w-full sm:w-auto">
+          <i class="fa-solid fa-phone"></i> +7 707 382 2207
+        </a>
+        <a href="https://wa.me/77073822207" target="_blank" rel="noopener"
+           class="bg-white text-green-600 border-2 border-green-500 px-7 py-4 rounded-2xl font-black text-lg inline-flex items-center justify-center gap-3 w-full sm:w-auto hover:bg-green-50 transition">
+          <i class="fa-brands fa-whatsapp text-2xl"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLASS / TRANSLUCENT PRODUCTS -->
+  <section id="glass" class="py-20 bg-slate-50 overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-4">Светопрозрачные <span class="text-red-500">изделия</span></h2>
+        <p class="text-center text-slate-500 font-medium max-w-3xl mx-auto mb-12">
+          Изготовление, демонтаж и монтаж: ПВХ окна, алюминиевые конструкции, стеклянные перегородки, регулировка окон.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <a data-aos="fade-up" href="https://wa.me/77073822207?text=%D0%9F%D0%92%D0%A5%20%D0%BE%D0%BA%D0%BD%D0%B0%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B8%D0%B7%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6."
+             target="_blank" rel="noopener"
+             class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center mb-4">
+              <i class="fa-regular fa-window-maximize"></i>
+            </div>
+            <div class="font-black text-slate-900 text-lg">ПВХ окна</div>
+            <div class="text-sm text-slate-500 mt-1">Изготовление и монтаж</div>
+          </a>
+
+          <a data-aos="fade-up" data-aos-delay="50" href="https://wa.me/77073822207?text=%D0%90%D0%BB%D1%8E%D0%BC%D0%B8%D0%BD%D0%B8%D0%B5%D0%B2%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B8%D0%B7%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6."
+             target="_blank" rel="noopener"
+             class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-border-all"></i>
+            </div>
+            <div class="font-black text-slate-900 text-lg">Алюминиевые конструкции</div>
+            <div class="text-sm text-slate-500 mt-1">Проект, сборка, установка</div>
+          </a>
+
+          <a data-aos="fade-up" data-aos-delay="100" href="https://wa.me/77073822207?text=%D0%A1%D1%82%D0%B5%D0%BA%D0%BB%D1%8F%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BA%D0%B8%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%B8%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6."
+             target="_blank" rel="noopener"
+             class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4">
+              <i class="fa-regular fa-square"></i>
+            </div>
+            <div class="font-black text-slate-900 text-lg">Стеклянные перегородки</div>
+            <div class="text-sm text-slate-500 mt-1">Офисы, ТЦ, помещения</div>
+          </a>
+
+          <a data-aos="fade-up" data-aos-delay="150" href="https://wa.me/77073822207?text=%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BE%D0%BA%D0%BE%D0%BD%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5."
+             target="_blank" rel="noopener"
+             class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div class="font-black text-slate-900 text-lg">Регулировка окон</div>
+            <div class="text-sm text-slate-500 mt-1">Фурнитура, прижим, герметичность</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits" class="py-20 bg-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-[420px] h-[420px] bg-emerald-50 rounded-full blur-3xl -z-10 opacity-60 -translate-x-1/2 -translate-y-1/2"></div>
+
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black text-center mb-4">Почему выгодно <span class="text-red-500">у нас</span></h2>
+      <p class="text-center text-slate-500 font-medium max-w-3xl mx-auto mb-12">
+        Работаем аккуратно, соблюдаем технику безопасности и сдаём результат в срок.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+        <div data-aos="fade-up" class="bg-slate-50 rounded-3xl p-6 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-white text-red-600 flex items-center justify-center mb-4 shadow-sm">
+            <i class="fa-solid fa-caravan"></i>
+          </div>
+          <div class="font-black text-slate-900 text-lg">Выезд и оценка бесплатно</div>
+          <div class="text-sm text-slate-500 mt-1">Приедем, осмотрим, предложим решение</div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="50" class="bg-slate-50 rounded-3xl p-6 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-white text-blue-700 flex items-center justify-center mb-4 shadow-sm">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <div class="font-black text-slate-900 text-lg">Индивидуальный подход</div>
+          <div class="text-sm text-slate-500 mt-1">Подбираем материалы и технологию под объект</div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100" class="bg-slate-50 rounded-3xl p-6 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-white text-emerald-700 flex items-center justify-center mb-4 shadow-sm">
+            <i class="fa-solid fa-credit-card"></i>
+          </div>
+          <div class="font-black text-slate-900 text-lg">Все виды оплаты</div>
+          <div class="text-sm text-slate-500 mt-1">Нал/безнал, договор, документы</div>
+        </div>
+
+        <div data-aos="fade-up" class="bg-slate-50 rounded-3xl p-6 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-white text-slate-900 flex items-center justify-center mb-4 shadow-sm">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div class="font-black text-slate-900 text-lg">Сертифицированные специалисты</div>
+          <div class="text-sm text-slate-500 mt-1">Опыт, допуски, техника безопасности</div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="50" class="bg-slate-50 rounded-3xl p-6 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-white text-red-600 flex items-center justify-center mb-4 shadow-sm">
+            <i class="fa-solid fa-shield"></i>
+          </div>
+          <div class="font-black text-slate-900 text-lg">Гарантия качества</div>
+          <div class="text-sm text-slate-500 mt-1">Контроль, аккуратный монтаж, фиксация</div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100" class="bg-slate-50 rounded-3xl p-6 border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-white text-amber-600 flex items-center justify-center mb-4 shadow-sm">
+            <i class="fa-solid fa-tags"></i>
+          </div>
+          <div class="font-black text-slate-900 text-lg">Скидки и акции</div>
+          <div class="text-sm text-slate-500 mt-1">Постоянным клиентам и на объём</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-20 bg-slate-50 overflow-hidden">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black text-center mb-12">Как мы работаем</h2>
+
+      <div class="max-w-5xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-3xl border border-slate-100 shadow-sm" data-aos="fade-right">
+            <h4 class="font-black text-lg mb-1">1) Заявка</h4>
+            <p class="text-sm text-slate-500">Звонок или WhatsApp. Уточняем задачу, адрес, доступы.</p>
+          </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-3xl border border-slate-100 shadow-sm" data-aos="fade-left">
+            <h4 class="font-black text-lg mb-1">2) Осмотр и смета</h4>
+            <p class="text-sm text-slate-500">Выезд, консультация и оценка — бесплатно. Согласуем сроки.</p>
+          </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+            <i class="fa-solid fa-helmet-safety"></i>
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-3xl border border-slate-100 shadow-sm" data-aos="fade-right">
+            <h4 class="font-black text-lg mb-1">3) Выполнение работ</h4>
+            <p class="text-sm text-slate-500">Соблюдаем технику безопасности, используем профессиональное снаряжение.</p>
+          </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-3xl border border-slate-100 shadow-sm" data-aos="fade-left">
+            <h4 class="font-black text-lg mb-1">4) Сдача результата</h4>
+            <p class="text-sm text-slate-500">Проверка качества, фотоотчёт при необходимости, закрывающие документы.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="tel:+77073822207" class="btn-accent text-white px-7 py-4 rounded-2xl font-black text-lg inline-flex items-center justify-center gap-3 w-full sm:w-auto">
+          <i class="fa-solid fa-phone"></i> Вызвать специалиста
+        </a>
+        <a href="#contacts" class="bg-white text-slate-900 border border-slate-200 px-7 py-4 rounded-2xl font-black text-lg inline-flex items-center justify-center gap-3 w-full sm:w-auto hover:bg-slate-50 transition">
+          <i class="fa-solid fa-paper-plane"></i> Оставить заявку
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black text-center mb-12">Вопросы и ответы</h2>
+
+      <div class="max-w-3xl mx-auto space-y-3">
+        <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
+                aria-expanded="false">
+          <div class="flex items-center justify-between gap-4">
+            <div class="font-black text-slate-900 text-lg">Вы работаете только в Астане?</div>
+            <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
+          </div>
+          <div class="faq-body hidden mt-3 text-slate-600 font-medium">
+            Основной выезд — Астана. По договорённости можем работать и в других городах Казахстана.
+          </div>
+        </button>
+
+        <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
+                aria-expanded="false">
+          <div class="flex items-center justify-between gap-4">
+            <div class="font-black text-slate-900 text-lg">Сколько стоит выезд и оценка?</div>
+            <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
+          </div>
+          <div class="faq-body hidden mt-3 text-slate-600 font-medium">
+            Выезд специалиста, консультация и оценка — бесплатно.
+          </div>
+        </button>
+
+        <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
+                aria-expanded="false">
+          <div class="flex items-center justify-between gap-4">
+            <div class="font-black text-slate-900 text-lg">Есть ли гарантия?</div>
+            <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
+          </div>
+          <div class="faq-body hidden mt-3 text-slate-600 font-medium">
+            Да, на выполненные работы предоставляется гарантия (условия зависят от вида работ и материалов).
+          </div>
+        </button>
+
+        <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
+                aria-expanded="false">
+          <div class="flex items-center justify-between gap-4">
+            <div class="font-black text-slate-900 text-lg">Какие работы вы делаете чаще всего?</div>
+            <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
+          </div>
+          <div class="faq-body hidden mt-3 text-slate-600 font-medium">
+            Мойка окон/витражей, герметизация швов, утепление, покраска фасада, ремонт кровли, монтаж баннеров и освещения.
+          </div>
+        </button>
+
+        <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
+                aria-expanded="false">
+          <div class="flex items-center justify-between gap-4">
+            <div class="font-black text-slate-900 text-lg">Как быстро можете приехать?</div>
+            <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
+          </div>
+          <div class="faq-body hidden mt-3 text-slate-600 font-medium">
+            В большинстве случаев — в день обращения. Уточняем по телефону/WhatsApp.
+          </div>
+        </button>
+
+        <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
+                aria-expanded="false">
+          <div class="flex items-center justify-between gap-4">
+            <div class="font-black text-slate-900 text-lg">Как отправить фото/видео объекта?</div>
+            <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
+          </div>
+          <div class="faq-body hidden mt-3 text-slate-600 font-medium">
+            Удобнее всего — через WhatsApp. Нажмите кнопку “WhatsApp” и прикрепите материалы.
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts" class="py-20 bg-slate-900 text-white rounded-t-[50px]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
+        <div data-aos="fade-up">
+          <div class="inline-flex items-center gap-2 bg-white/10 border border-white/10 px-4 py-1.5 rounded-full mb-6">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-ping"></span>
+            <span class="text-xs font-black uppercase tracking-wide">Связаться с нами</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-black mb-4">Контакты</h2>
+          <p class="text-white/70 font-medium mb-8">
+            Астана, Казахстан. Промышленный альпинизм и высотные работы 24/7.
+          </p>
+
+          <div class="space-y-3">
+            <a href="tel:+77073822207"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-white text-slate-900 font-black hover:bg-slate-100 transition">
+              <i class="fa-solid fa-phone text-red-500"></i> +7 707 382 2207
+            </a>
+
+            <a href="https://wa.me/77073822207"
+               target="_blank" rel="noopener"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-green-500 text-white font-black hover:brightness-110 transition">
+              <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
+            </a>
+          </div>
+
+          <div class="mt-10 text-white/70 text-sm font-medium">
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1"></i>
+              <span>Выезд специалиста, консультация и оценка — бесплатно</span>
+            </div>
+            <div class="flex items-start gap-2 mt-2">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1"></i>
+              <span>Сертифицированные специалисты, техника безопасности</span>
+            </div>
+            <div class="flex items-start gap-2 mt-2">
+              <i class="fa-solid fa-circle-check text-green-400 mt-1"></i>
+              <span>Все виды оплаты, договор и документы</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp form (no backend) -->
+        <div data-aos="fade-up" data-aos-delay="100" class="bg-white/5 border border-white/10 rounded-[32px] p-6 md:p-8 shadow-2xl">
+          <h3 class="text-2xl font-black mb-2">Быстрая заявка</h3>
+          <p class="text-white/70 font-medium mb-6">Заполните — и мы откроем WhatsApp с готовым сообщением.</p>
+
+          <form id="waForm" class="space-y-4">
+            <div>
+              <label class="text-xs font-black uppercase tracking-widest text-white/60">Имя</label>
+              <input id="fName" type="text" placeholder="Например: Айдар"
+                     class="mt-2 w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/10 outline-none focus:border-white/30 placeholder:text-white/40 font-semibold" />
+            </div>
+
+            <div>
+              <label class="text-xs font-black uppercase tracking-widest text-white/60">Услуга</label>
+              <select id="fService"
+                      class="mt-2 w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/10 outline-none focus:border-white/30 font-semibold">
+                <option value="Промышленный альпинизм / высотные работы">Промышленный альпинизм / высотные работы</option>
+                <option value="Мойка окон / фасада">Мойка окон / фасада</option>
+                <option value="Герметизация швов">Герметизация швов</option>
+                <option value="Утепление стен снаружи">Утепление стен снаружи</option>
+                <option value="Покраска / грунтовка фасада">Покраска / грунтовка фасада</option>
+                <option value="Ремонт кровли">Ремонт кровли</option>
+                <option value="Монтаж / демонтаж баннеров">Монтаж / демонтаж баннеров</option>
+                <option value="Монтаж освещения">Монтаж освещения</option>
+                <option value="Вентиляционные шахты">Вентиляционные шахты</option>
+                <option value="Кондиционеры (установка/заправка)">Кондиционеры (установка/заправка)</option>
+                <option value="Витражи / светопрозрачные конструкции">Витражи / светопрозрачные конструкции</option>
+                <option value="Замена стеклопакетов">Замена стеклопакетов</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-xs font-black uppercase tracking-widest text-white/60">Описание</label>
+              <textarea id="fMsg" rows="4" placeholder="Опишите задачу: адрес/этаж/примерный объём, прикрепите фото в WhatsApp."
+                        class="mt-2 w-full px-4 py-3 rounded-2xl bg-white/10 border border-white/10 outline-none focus:border-white/30 placeholder:text-white/40 font-semibold resize-none"></textarea>
+            </div>
+
+            <button type="submit"
+                    class="w-full btn-accent text-white px-6 py-4 rounded-2xl font-black text-lg flex items-center justify-center gap-3">
+              <i class="fa-brands fa-whatsapp text-xl"></i> Отправить в WhatsApp
+            </button>
+
+            <p class="text-xs text-white/50 font-medium">
+              Нажимая “Отправить”, вы перейдёте в WhatsApp (без хранения данных на сайте).
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-14 border-t border-white/10 pt-8 text-center text-white/50 text-xs font-semibold">
+        © <span id="year"></span> AlpFenix. Астана. Все права защищены.
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile bottom bar -->
+  <div class="fixed bottom-6 left-4 right-4 z-50 md:hidden">
+    <div class="bg-slate-900/90 backdrop-blur-md p-2 rounded-[20px] shadow-2xl border border-white/10 flex gap-2">
+      <a href="tel:+77073822207"
+         class="flex-1 bg-white text-slate-900 rounded-xl flex items-center justify-center py-4 font-black text-lg active:scale-95 transition">
+        <i class="fa-solid fa-phone mr-2 text-red-500"></i> ПОЗВОНИТЬ
+      </a>
+      <a href="https://wa.me/77073822207" target="_blank" rel="noopener"
+         class="w-16 bg-green-500 text-white rounded-xl flex items-center justify-center text-2xl active:scale-95 transition">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // burger
+    const burgerBtn = document.getElementById('burgerBtn');
+    const burgerIcon = document.getElementById('burgerIcon');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMenu(){
+      if(!mobileMenu || !burgerBtn || !burgerIcon) return;
+      mobileMenu.classList.remove('menu-expanded');
+      mobileMenu.classList.add('menu-collapsed');
+      burgerBtn.setAttribute('aria-expanded','false');
+      burgerIcon.classList.remove('fa-xmark');
+      burgerIcon.classList.add('fa-bars');
+    }
+    function openMenu(){
+      if(!mobileMenu || !burgerBtn || !burgerIcon) return;
+      mobileMenu.classList.remove('menu-collapsed');
+      mobileMenu.classList.add('menu-expanded');
+      burgerBtn.setAttribute('aria-expanded','true');
+      burgerIcon.classList.remove('fa-bars');
+      burgerIcon.classList.add('fa-xmark');
+    }
+
+    burgerBtn && burgerBtn.addEventListener('click', () => {
+      const isOpen = burgerBtn.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+      const isOpen = burgerBtn && burgerBtn.getAttribute('aria-expanded') === 'true';
+      if(!isOpen) return;
+      if(mobileMenu.contains(e.target) || burgerBtn.contains(e.target)) return;
+      closeMenu();
+    });
+
+    // close menu on menu link click (mobile)
+    document.querySelectorAll('#mobileMenu a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => closeMenu());
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        // close others (nice UX)
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if(other !== btn){
+            other.setAttribute('aria-expanded', 'false');
+            other.querySelector('.faq-body')?.classList.add('hidden');
+          }
+        });
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.querySelector('.faq-body')?.classList.toggle('hidden', expanded);
+      });
+    });
+
+    // WhatsApp form -> open wa.me with encoded message
+    const waForm = document.getElementById('waForm');
+    waForm && waForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('fName')?.value || '').trim();
+      const service = (document.getElementById('fService')?.value || '').trim();
+      const msg = (document.getElementById('fMsg')?.value || '').trim();
+
+      const text =
+        `Здравствуйте! Меня зовут ${name || '—'}.\n` +
+        `Город: Астана.\n` +
+        `Услуга: ${service || '—'}.\n` +
+        `Описание: ${msg || '—'}\n\n` +
+        `Можете подсказать цену и ближайшие сроки?`;
+
+      const url = `https://wa.me/77073822207?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank', 'noopener');
+    });
+
+    // Image fallback (if images/ are not added yet)
+    const placeholderSvg = (label) => {
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">`+
+          `<defs>`+
+            `<linearGradient id="g" x1="0" x2="1" y1="0" y2="1">`+
+              `<stop offset="0" stop-color="#0f172a" stop-opacity=".10"/>`+
+              `<stop offset="1" stop-color="#ef4444" stop-opacity=".18"/>`+
+            `</linearGradient>`+
+          `</defs>`+
+          `<rect width="1200" height="800" fill="url(#g)"/>`+
+          `<circle cx="240" cy="180" r="160" fill="#ef4444" fill-opacity=".15"/>`+
+          `<circle cx="980" cy="220" r="210" fill="#3b82f6" fill-opacity=".14"/>`+
+          `<circle cx="620" cy="690" r="240" fill="#10b981" fill-opacity=".12"/>`+
+          `<text x="60" y="740" font-family="Outfit, Arial" font-size="44" font-weight="900" fill="#0f172a" fill-opacity=".70">${label}</text>`+
+        `</svg>`;
+      return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    };
+
+    // Rotate hero image on each visit (uses localStorage)
+    (function rotateHero(){
+      const el = document.getElementById('heroImage');
+      if(!el) return;
+
+      const images = Array.from({length: 8}, (_, i) => `images/img${i+1}.jpg`);
+      const key = 'alpHeroIdx';
+
+      let last = Number(localStorage.getItem(key));
+      if(!Number.isFinite(last)) last = -1;
+
+      const next = (last + 1) % images.length;
+      localStorage.setItem(key, String(next));
+
+      const nextSrc = images[next];
+
+      // preload, then fade swap; if missing -> fallback svg
+      const pre = new Image();
+      pre.onload = () => {
+        el.style.opacity = '0';
+        setTimeout(() => {
+          el.src = nextSrc;
+          requestAnimationFrame(() => el.style.opacity = '1');
+        }, 140);
+      };
+      pre.onerror = () => {
+        el.src = placeholderSvg('Промышленный альпинизм · Астана');
+        el.style.opacity = '1';
+      };
+      pre.src = nextSrc;
+
+      // direct fallback if current src fails
+      el.onerror = () => { el.src = placeholderSvg('Промышленный альпинизм · Астана'); };
+    })();
+
+    // Fallback for strip images
+    document.querySelectorAll('.scorlling img').forEach((img, idx) => {
+      img.addEventListener('error', () => {
+        img.src = placeholderSvg(`Фото работ ${idx+1}`);
+      }, { once: true });
+    });
+  </script>
+</body>
+</html>
