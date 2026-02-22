@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  <title>Промышленный альпинизм Астана | Alp Fenix | Высотные работы 24/7</title>
-  <meta name="description" content="Промышленный альпинизм в Астане: высотные работы 24/7 — мойка окон, герметизация швов, утепление, покраска фасада, ремонт кровли, монтаж/демонтаж баннеров, замена стеклопакетов, монтаж освещения, вентиляционные шахты, кондиционеры." />
+  <title>Промышленный альпинизм Астана | ALP-PHOENIX | Высотные работы 24/7</title>
+  <meta name="description" content="ALP-PHOENIX — промышленный альпинизм в Астане: высотные работы 24/7 — мойка окон, герметизация швов, утепление, покраска фасада, ремонт кровли, монтаж/демонтаж баннеров, замена стеклопакетов, монтаж освещения, вентиляционные шахты, кондиционеры." />
 
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -89,7 +89,7 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    /* Icon pills (nav left of burger) */
+    /* Icon pills */
     .icon-pill{
       width:44px; height:44px;
       border-radius: 999px;
@@ -131,8 +131,6 @@
       border: 4px solid rgba(255,255,255,.85);
       background: #e2e8f0;
     }
-
-    /* delays */
     .item1 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 1) * -1); }
     .item2 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 2) * -1); }
     .item3 { animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 3) * -1); }
@@ -146,13 +144,75 @@
     .faq-item[aria-expanded="true"] .faq-chevron{ transform: rotate(180deg); }
     .faq-chevron{ transition: transform .18s ease; }
 
-    /* Subtle grid background for hero image fallback */
+    /* Subtle background */
     .grid-fallback{
       background:
         radial-gradient(circle at 25% 10%, rgba(239,68,68,.20), transparent 35%),
         radial-gradient(circle at 80% 30%, rgba(59,130,246,.18), transparent 40%),
         radial-gradient(circle at 40% 95%, rgba(16,185,129,.18), transparent 45%),
         linear-gradient(135deg, rgba(15,23,42,.06), rgba(15,23,42,.02));
+    }
+
+    /* ✅ Smaller bouncing badges on mobile (your request) */
+    .hero-badge{
+      padding: .75rem;
+      border-radius: 1.25rem;
+    }
+    .hero-badge .badge-icon{
+      padding: .5rem;
+      border-radius: .9rem;
+    }
+    .hero-badge .badge-title{
+      font-size: .60rem;
+      letter-spacing: .14em;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #94a3b8;
+      line-height: 1.1;
+    }
+    .hero-badge .badge-text{
+      font-size: .95rem;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.15;
+    }
+    @media (min-width: 640px){
+      .hero-badge{ padding: 1rem; border-radius: 1.5rem; }
+      .hero-badge .badge-title{ font-size: .62rem; }
+      .hero-badge .badge-text{ font-size: 1rem; }
+      .hero-badge .badge-icon{ padding: .55rem; }
+    }
+
+    /* реквизиты - readable */
+    .requisites-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .5rem;
+    }
+    @media (min-width: 768px){
+      .requisites-grid{
+        grid-template-columns: 1fr 1fr;
+        gap: .75rem 1.25rem;
+      }
+    }
+    .req-row{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding: .85rem 1rem;
+    }
+    .req-k{
+      font-size: .72rem;
+      letter-spacing: .14em;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+    }
+    .req-v{
+      margin-top: .25rem;
+      font-weight: 800;
+      color: rgba(255,255,255,.92);
+      word-break: break-word;
     }
   </style>
 </head>
@@ -170,7 +230,7 @@
           </div>
           <div>
             <div class="font-extrabold text-lg leading-none tracking-tight">
-              Alp<span class="text-red-500">Fenix</span>
+              ALP<span class="text-red-500">-PHOENIX</span>
             </div>
             <div class="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">Промышленный альпинизм · Астана</div>
           </div>
@@ -189,7 +249,7 @@
           <a href="tel:+77073822207"
              class="hidden md:flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 transition shadow-lg">
             <i class="fa-solid fa-phone text-sm"></i>
-            <span class="font-black">+7 707 382 2207</span>
+            <span class="font-black">+7 707 382 22 07</span>
           </a>
 
           <button id="burgerBtn"
@@ -286,7 +346,6 @@
         <!-- Visual -->
         <div class="w-full lg:w-1/2 relative" data-aos="zoom-in" data-aos-delay="150">
           <div class="w-full h-[420px] md:h-[520px] relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-4 border-white grid-fallback">
-            <!-- rotates between images/img1.jpg ... img8.jpg (optional). Has fallback if images not found. -->
             <img id="heroImage"
                  src="images/img1.jpg"
                  alt="Высотные работы в Астане"
@@ -294,7 +353,6 @@
                  loading="eager" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/35 via-transparent to-transparent"></div>
 
-            <!-- Big badge -->
             <div class="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-md rounded-3xl p-4 border border-white shadow-xl">
               <div class="flex items-center gap-3">
                 <div class="w-11 h-11 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center">
@@ -311,23 +369,23 @@
             </div>
           </div>
 
-          <!-- floating cards -->
-          <div class="absolute top-10 -left-4 sm:-left-6 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 3.2s;">
+          <!-- ✅ smaller badges -->
+          <div class="absolute top-10 -left-4 sm:-left-6 bg-white hero-badge shadow-xl z-20 animate-bounce" style="animation-duration: 3.2s;">
             <div class="flex items-center gap-3">
-              <div class="bg-green-100 p-2 rounded-lg text-green-700"><i class="fa-solid fa-bolt"></i></div>
+              <div class="bg-green-100 text-green-700 badge-icon"><i class="fa-solid fa-bolt"></i></div>
               <div>
-                <p class="text-[10px] text-slate-400 font-black uppercase">Срочно</p>
-                <p class="font-black text-slate-900">Выезд в день заявки</p>
+                <p class="badge-title">Срочно</p>
+                <p class="badge-text">Выезд в день заявки</p>
               </div>
             </div>
           </div>
 
-          <div class="absolute top-28 -right-3 sm:-right-6 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 4.2s;">
+          <div class="absolute top-28 -right-3 sm:-right-6 bg-white hero-badge shadow-xl z-20 animate-bounce" style="animation-duration: 4.2s;">
             <div class="flex items-center gap-3">
-              <div class="bg-blue-100 p-2 rounded-lg text-blue-700"><i class="fa-solid fa-ruler-combined"></i></div>
+              <div class="bg-blue-100 text-blue-700 badge-icon"><i class="fa-solid fa-ruler-combined"></i></div>
               <div>
-                <p class="text-[10px] text-slate-400 font-black uppercase">Точно</p>
-                <p class="font-black text-slate-900">Замер и смета</p>
+                <p class="badge-title">Точно</p>
+                <p class="badge-text">Замер и смета</p>
               </div>
             </div>
           </div>
@@ -350,8 +408,6 @@
       </p>
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        <!-- card helper classes -->
-        <!-- Each card: clickable to WhatsApp -->
         <a data-aos="fade-up" href="https://wa.me/77073822207?text=%D0%97%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0%20%D1%81%D1%82%D0%B5%D0%BA%D0%BB%D0%BE%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%86%D0%B5%D0%BD%D1%83."
            target="_blank" rel="noopener"
            class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
@@ -396,7 +452,7 @@
         </a>
 
         <a data-aos="fade-up"
-           href="https://wa.me/77073822207?text=%D0%94%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%B8%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%B2%D0%B5%D0%BD%D1%82%D1%88%D0%B0%D1%85%D1%82%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D0%B5."
+           href="https://wa.me/77073822207?text=%D0%94%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%B8%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%B2%D0%B5%D0%BD%D1%82%D1%88%D0%B0%D1%85%D1%82%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%20%D0%B2%DB%8B%D1%81%D0%BE%D1%82%D0%B5."
            target="_blank" rel="noopener"
            class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
           <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
@@ -418,7 +474,7 @@
         </a>
 
         <a data-aos="fade-up" data-aos-delay="100"
-           href="https://wa.me/77073822207?text=%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%BE%D1%81%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D0%B5%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6/%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0%20%D1%81%D0%B2%D0%B5%D1%82%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2."
+           href="https://wa.me/77073822207?text=%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%20%D0%BE%D1%81%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%20%D0%B2%DB%8B%D1%81%D0%BE%D1%82%D0%B5%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6/%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0%20%D1%81%D0%B2%D0%B5%D1%82%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2."
            target="_blank" rel="noopener"
            class="group bg-slate-50 p-6 rounded-3xl hover:bg-red-500 hover:text-white transition-all duration-300">
           <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl text-red-500 mb-4 shadow-sm group-hover:scale-110 transition">
@@ -484,11 +540,11 @@
         </a>
       </div>
 
-      <!-- Photo strip (8 photos in /images/img1.jpg ... img8.jpg) -->
+      <!-- Photo strip -->
       <div class="mt-14" data-aos="fade-up">
         <div class="text-center mb-6">
           <h3 class="text-2xl md:text-3xl font-black text-slate-900">Фото <span class="text-red-500">работ</span></h3>
-          <p class="text-slate-500 font-medium mt-2">Положите 8 фото в папку <b>images</b> с именами <b>img1.jpg</b> … <b>img8.jpg</b>.</p>
+          <p class="text-slate-500 font-medium mt-2">8 фото в папке <b>images</b> с именами <b>img1.jpg</b> … <b>img8.jpg</b>.</p>
         </div>
 
         <div class="mx-auto scorlling rounded-[32px] bg-white border border-slate-100">
@@ -503,10 +559,9 @@
         </div>
       </div>
 
-      <!-- Quick CTA -->
       <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
         <a href="tel:+77073822207" class="btn-accent text-white px-7 py-4 rounded-2xl font-black text-lg inline-flex items-center justify-center gap-3 w-full sm:w-auto">
-          <i class="fa-solid fa-phone"></i> +7 707 382 2207
+          <i class="fa-solid fa-phone"></i> +7 707 382 22 07
         </a>
         <a href="https://wa.me/77073822207" target="_blank" rel="noopener"
            class="bg-white text-green-600 border-2 border-green-500 px-7 py-4 rounded-2xl font-black text-lg inline-flex items-center justify-center gap-3 w-full sm:w-auto hover:bg-green-50 transition">
@@ -516,7 +571,7 @@
     </div>
   </section>
 
-  <!-- GLASS / TRANSLUCENT PRODUCTS -->
+  <!-- GLASS -->
   <section id="glass" class="py-20 bg-slate-50 overflow-hidden">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
@@ -559,7 +614,7 @@
           <a data-aos="fade-up" data-aos-delay="150" href="https://wa.me/77073822207?text=%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BE%D0%BA%D0%BE%D0%BD%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5."
              target="_blank" rel="noopener"
              class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-content-center mb-4">
               <i class="fa-solid fa-screwdriver-wrench"></i>
             </div>
             <div class="font-black text-slate-900 text-lg">Регулировка окон</div>
@@ -732,28 +787,6 @@
         <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
                 aria-expanded="false">
           <div class="flex items-center justify-between gap-4">
-            <div class="font-black text-slate-900 text-lg">Какие работы вы делаете чаще всего?</div>
-            <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
-          </div>
-          <div class="faq-body hidden mt-3 text-slate-600 font-medium">
-            Мойка окон/витражей, герметизация швов, утепление, покраска фасада, ремонт кровли, монтаж баннеров и освещения.
-          </div>
-        </button>
-
-        <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
-                aria-expanded="false">
-          <div class="flex items-center justify-between gap-4">
-            <div class="font-black text-slate-900 text-lg">Как быстро можете приехать?</div>
-            <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
-          </div>
-          <div class="faq-body hidden mt-3 text-slate-600 font-medium">
-            В большинстве случаев — в день обращения. Уточняем по телефону/WhatsApp.
-          </div>
-        </button>
-
-        <button class="faq-item w-full text-left bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
-                aria-expanded="false">
-          <div class="flex items-center justify-between gap-4">
             <div class="font-black text-slate-900 text-lg">Как отправить фото/видео объекта?</div>
             <i class="faq-chevron fa-solid fa-chevron-down text-slate-500"></i>
           </div>
@@ -765,7 +798,7 @@
     </div>
   </section>
 
-  <!-- CONTACTS -->
+  <!-- CONTACTS + FOOTER -->
   <section id="contacts" class="py-20 bg-slate-900 text-white rounded-t-[50px]">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
@@ -783,7 +816,7 @@
           <div class="space-y-3">
             <a href="tel:+77073822207"
                class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-white text-slate-900 font-black hover:bg-slate-100 transition">
-              <i class="fa-solid fa-phone text-red-500"></i> +7 707 382 2207
+              <i class="fa-solid fa-phone text-red-500"></i> +7 707 382 22 07
             </a>
 
             <a href="https://wa.me/77073822207"
@@ -809,7 +842,7 @@
           </div>
         </div>
 
-        <!-- WhatsApp form (no backend) -->
+        <!-- WhatsApp form -->
         <div data-aos="fade-up" data-aos-delay="100" class="bg-white/5 border border-white/10 rounded-[32px] p-6 md:p-8 shadow-2xl">
           <h3 class="text-2xl font-black mb-2">Быстрая заявка</h3>
           <p class="text-white/70 font-medium mb-6">Заполните — и мы откроем WhatsApp с готовым сообщением.</p>
@@ -858,8 +891,58 @@
         </div>
       </div>
 
-      <div class="mt-14 border-t border-white/10 pt-8 text-center text-white/50 text-xs font-semibold">
-        © <span id="year"></span> AlpFenix. Астана. Все права защищены.
+      <!-- ✅ реквизиты + разработчик (your request) -->
+      <div class="mt-14 border-t border-white/10 pt-10">
+        <h3 class="text-2xl font-black mb-6 text-center">Наши контакты и реквизиты</h3>
+
+        <div class="requisites-grid max-w-6xl mx-auto">
+          <div class="req-row">
+            <div class="req-k">Компания</div>
+            <div class="req-v">ТОО феникс альп.групп</div>
+          </div>
+
+          <div class="req-row">
+            <div class="req-k">Телефон</div>
+            <div class="req-v"><a class="underline decoration-white/30 hover:decoration-white" href="tel:+77073822207">+7 707 382 22 07</a></div>
+          </div>
+
+          <div class="req-row">
+            <div class="req-k">ИИН/БИН</div>
+            <div class="req-v">170240022714</div>
+          </div>
+
+          <div class="req-row">
+            <div class="req-k">ИИК</div>
+            <div class="req-v">KZ156017111000012810</div>
+          </div>
+
+          <div class="req-row">
+            <div class="req-k">КБе</div>
+            <div class="req-v">17</div>
+          </div>
+
+          <div class="req-row">
+            <div class="req-k">Банк</div>
+            <div class="req-v">АО «Народный Банк Казахстана»</div>
+          </div>
+
+          <div class="req-row md:col-span-2">
+            <div class="req-k">БИК</div>
+            <div class="req-v">HSBKKZKX</div>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center text-white/55 text-sm font-semibold">
+          Разработчик сайта —
+          <a href="https://wa.me/77074534518" target="_blank" rel="noopener" class="text-white underline decoration-white/30 hover:decoration-white">
+            Anuken
+          </a>
+          (WhatsApp: <a href="https://wa.me/77074534518" target="_blank" rel="noopener" class="text-white underline decoration-white/30 hover:decoration-white">+7 707 453 4518</a>)
+        </div>
+
+        <div class="mt-6 text-center text-white/45 text-xs font-semibold">
+          © <span id="year"></span> ALP-PHOENIX. Все права защищены.
+        </div>
       </div>
     </div>
   </section>
@@ -923,7 +1006,6 @@
       closeMenu();
     });
 
-    // close menu on menu link click (mobile)
     document.querySelectorAll('#mobileMenu a[href^="#"]').forEach(a => {
       a.addEventListener('click', () => closeMenu());
     });
@@ -932,7 +1014,6 @@
     document.querySelectorAll('.faq-item').forEach(btn => {
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
-        // close others (nice UX)
         document.querySelectorAll('.faq-item').forEach(other => {
           if(other !== btn){
             other.setAttribute('aria-expanded', 'false');
@@ -963,7 +1044,7 @@
       window.open(url, '_blank', 'noopener');
     });
 
-    // Image fallback (if images/ are not added yet)
+    // image fallback
     const placeholderSvg = (label) => {
       const svg =
         `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">`+
@@ -982,7 +1063,7 @@
       return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
     };
 
-    // Rotate hero image on each visit (uses localStorage)
+    // Rotate hero image on each visit
     (function rotateHero(){
       const el = document.getElementById('heroImage');
       if(!el) return;
@@ -998,7 +1079,6 @@
 
       const nextSrc = images[next];
 
-      // preload, then fade swap; if missing -> fallback svg
       const pre = new Image();
       pre.onload = () => {
         el.style.opacity = '0';
@@ -1013,7 +1093,6 @@
       };
       pre.src = nextSrc;
 
-      // direct fallback if current src fails
       el.onerror = () => { el.src = placeholderSvg('Промышленный альпинизм · Астана'); };
     })();
 
